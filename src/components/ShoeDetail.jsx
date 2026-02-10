@@ -1,4 +1,6 @@
 import nike1 from "../assets/n1-min.png";
+import { QTY, SIZES } from "../constants";
+import { Select } from "../components/Select";
 
 export function ShoeDetail() {
   return (
@@ -18,7 +20,13 @@ export function ShoeDetail() {
           }
         </div>
         {/*Shoe Price*/}
-        <div className="text-3xl font-extrabold md:text-6xl">$ 100</div>
+        <div className="flex space-x-6">
+          <div className="text-3xl font-extrabold md:text-6xl">$ 100</div>
+
+          <Select title={"QTY"} options={QTY} />
+          <Select title={"SIZE"} options={SIZES} />
+        </div>
+
         {/*Shoe Buttons and Links*/}
         <div className="space-x-8">
           <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
