@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
 
-export function Nav() {
+export function Nav({onClickShoppingBtn}) {
   const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
 
   return (
@@ -41,7 +41,8 @@ export function Nav() {
           })}
         </ul>
       </div>
-      <div className="fixed left-4 bottom-4 lg:static lg:mr-8">
+      {/* Shopping Bag Button */}
+      <div className="fixed left-4 bottom-4 lg:static lg:mr-8" onClick={onClickShoppingBtn}>
         <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
           <TbShoppingBag />
         </div>
