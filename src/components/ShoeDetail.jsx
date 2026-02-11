@@ -31,7 +31,7 @@ export function ShoeDetail() {
 
         {/*Shoe Buttons and Links*/}
         <div className="space-x-8">
-          <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700">
+          <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700 cursor-pointer">
             Add to bag
           </button>
           <a
