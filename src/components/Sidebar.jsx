@@ -6,7 +6,7 @@ export function Sidebar({children, isOpen, onClickClose}) {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <button className="absolute top-4 right-4 p-2 text-black font-bold cursor-pointer" onClick={onClickClose}>X</button>
+        <button className="absolute top-4 right-4 p-2 text-black font-bold cursor-pointer dark:text-white" onClick={onClickClose}>X</button>
         {children}
       </div>
         {isOpen && <div className="fixed left-0 top-0 z-20 h-full w-full bg-black opacity-50"></div>}
