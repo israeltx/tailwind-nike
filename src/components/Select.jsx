@@ -3,7 +3,7 @@ import { twMerge } from "tw-merge";
 
 export function Select({ options, title, className, defaultValue }) {
   return (
-    <div className="relative">
+    <div className="relative dark:text-black">
       <select
         defaultValue={defaultValue || ""}
         className={twMerge(`w-24 appearance-none border border-gray-300 p-4 bg-white cursor-pointer ${className}`)}
