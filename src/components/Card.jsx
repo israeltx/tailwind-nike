@@ -1,6 +1,7 @@
-export function Card({ item }) {
+export function Card({ item, onClick }) {
   return (
     <div
+      onClick={() => onClick(item)}
       className={`${item.className} max-w-xl cursor-pointer transition hover:scale-105 relative`}
     >
       <div className="p-8">
