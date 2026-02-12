@@ -1,7 +1,7 @@
 import { CiTrash } from "react-icons/ci";
 import { Select } from "../components/Select";
 import { SIZES, QTY } from "../constants";
-export function CartItem({ item: { product, qty, size } }) {
+export function CartItem({ item: { product, qty, size }, onClickTrash }) {
   return (
     <div
       className={
@@ -43,7 +43,7 @@ export function CartItem({ item: { product, qty, size } }) {
             />
           </div>
         </div>
-        <button>
+        <button className="cursor-pointer" onClick={() => onClickTrash(product.id)}>
           <CiTrash size={25} className="text-black dark:text-white" />
         </button>
       </div>

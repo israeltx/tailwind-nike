@@ -15,7 +15,6 @@ export default function App() {
   const [currentShoe, setCurrentShoe] = useState(SHOE_LIST[0]);
   const [cartItems, setCartItems] = useState([])
 
-
   const toggleDarkMode = () => {
     window.document.documentElement.classList.toggle("dark");
     localStorage.setItem(
@@ -41,13 +40,22 @@ export default function App() {
     }
   };
 
+  const removeFromCart = (productId) => {
+    const updatedCartItems = [...cartItems];
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.product.id === productId,
+    );
+    updatedCartItems.splice(existingItemIndex, 1);
+    setCartItems(updatedCartItems);
+  };
+
   return (
     <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night">
       <Nav onClickShoppingBtn={()=> setIsSidebarOpen(true)} />
       <ShoeDetail shoe={currentShoe} onClickAdd={addToCart} />
       <NewArrivalsSection items={SHOE_LIST} onClickCard={setCurrentShoe}/>
       <Sidebar isOpen={isSidebarOpen} onClickClose={() => setIsSidebarOpen(false)}>
-        <Cart cartItems={cartItems}/>
+        <Cart cartItems={cartItems} onClickTrash={removeFromCart}/>
       </Sidebar>
       <div className="fixed bottom-4 right-4">
         <button
